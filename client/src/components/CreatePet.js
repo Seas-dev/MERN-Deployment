@@ -23,18 +23,18 @@ const CreatePet = props => {
       
     const onSubmitHandler = e => {
         e.preventDefault();
-        for(let i = 0; i < allPetNames.length; i++)
-        {
-            if(allPetNames[i].name === name){
-                setUniErr("That name is already taken.")
-                setUni(false);
-            }
-            else {
-                setUni(true);
-            }
+        // for(let i = 0; i < allPetNames.length; i++)
+        // {
+        //     if(allPetNames[i].name === name){
+        //         setUniErr("That name is already taken.")
+        //         setUni(false);
+        //     }
+        //     else {
+        //         setUni(true);
+        //     }
 
-        }
-        if(uni){
+        // }
+        // if(uni){
             axios.post("http://localhost:8000/api/newPet", {
                 name,
                 type,
@@ -51,7 +51,7 @@ const CreatePet = props => {
                     navigate('/');
                 }})
             .catch(err=>console.log(err));
-        }
+        // }
     }
 
 
